@@ -1,0 +1,128 @@
+---
+title: "Teams"
+description: "Manage teams, members, and permissions in Ragou"
+icon: "users"
+---
+
+# Teams
+
+Teams house projects, so you must start your Ragou journey with a team. Teams provide the foundation for organizing your work and managing access to your projects and data.
+
+![Teams Overview](/images/teams.jpeg)
+
+## Getting Started with Teams
+
+Every Ragou workspace begins with creating a team. Teams serve as the organizational unit that contains all your projects, data, and collaborative work.
+
+## Team Management
+
+### Creating a Team
+
+To create a new team:
+1. Navigate to your dashboard
+2. Click "Create Team" 
+3. Enter your team name and details
+4. Set up initial permissions
+
+### Updating Team Display Name
+
+You can easily update your team's display name at any time:
+1. Go to Team Settings
+2. Click "Edit" icon
+3. Update the display name
+4. Save your changes
+
+## Team Members and Permissions
+
+Teams use a role-based permission system with three distinct levels:
+
+### Permission Levels
+
+<Tabs>
+  <Tab title="Owner">
+    **Full Control**
+    - Manage team settings and billing
+    - Add/remove team members
+    - Manage all projects within the team
+    - Access to all data and monitoring
+    - Full administrative privileges
+  </Tab>
+  
+  <Tab title="Contributor">
+    **Project Management**
+    - Manage data upload and deletion
+    - Create and edit projects
+    - Access monitoring and analytics
+    - Manage forms and responses
+    - Cannot manage team billing or members
+  </Tab>
+  
+  <Tab title="Reader">
+    **View-Only Access**
+    - Read-only access to data and monitoring
+    - View forms and responses
+    - Edit "mark contacted" status only
+    - Cannot upload, delete, or manage projects
+    - Limited to viewing permissions
+  </Tab>
+</Tabs>
+
+### Important Permission Notes
+
+<Warning>
+Currently, there is no support for project-level RBAC (Role-Based Access Control). All permissions are inherited from the team level, so it's crucial to assign the correct permissions to users based on their needs.
+</Warning>
+
+## Managing Team Members
+
+### Inviting Members
+
+To invite new members to your team:
+
+1. **Find the User ID**: Ask the person you want to invite for their User ID, which can be found in their profile settings
+2. **Send Invitation**: 
+   - Go to Team Settings > Members
+   - Click "Invite Member"
+   - Enter their User ID
+   - Select the appropriate permission level (Owner, Contributor, or Reader)
+   - Send the invitation
+
+3. **Acceptance Process**: The invited user will:
+   - Receive a notification about the invitation
+   - Navigate to their "Invites" area in their Teams page
+   - Accept the invitation to join the team
+
+### Managing Existing Members
+
+Once members are part of your team, you can:
+- Change their permission levels
+- Remove members from the team
+- View member activity and contributions
+
+## Best Practices
+
+<Tip>
+**Permission Assignment Guidelines:**
+- Assign Owner roles sparingly - only to users who need full administrative access
+- Use Contributor roles for team members who actively work with data and projects
+- Reader roles are perfect for stakeholders who need visibility but not editing capabilities
+</Tip>
+
+### Team Organization Tips
+
+1. **Start Small**: Begin with a core team and add members as needed
+2. **Clear Roles**: Communicate permission levels clearly to all team members
+3. **Regular Reviews**: Periodically review team membership and permissions
+4. **Billing Awareness**: Remember that only Owners can manage billing, so ensure you have at least one active Owner
+
+## Next Steps
+
+After setting up your team:
+1. Create your first project within the team
+2. Set up data sources and integrations
+3. Configure monitoring and alerts
+4. Start collaborating with your team members
+
+<Card title="Need Help?" icon="question-circle">
+If you need assistance with team setup or have questions about permissions, check out our [support resources](/support) or contact our team.
+</Card>

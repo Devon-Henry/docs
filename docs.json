@@ -39,7 +39,8 @@
               "features/chat",
               "features/data",
               "features/monitoring",
-              "features/forms"
+              "features/forms",
+              "features/teams"
             ]
           }
         ]
