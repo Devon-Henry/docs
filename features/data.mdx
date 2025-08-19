@@ -1,0 +1,185 @@
+---
+title: "Data Management"
+description: "Upload and manage your knowledge base documents"
+icon: "database"
+---
+
+# Data Management
+
+Data management is the central hub for controlling both your team's internal knowledge base and your public project data. Understanding the distinction between these data types is crucial for maintaining security and optimizing your AI chat experience.
+
+## Accessing Data Management
+
+<Card
+  title="Data Management"
+  icon="database"
+  href="https://app.ragou.net/home/teams/data"
+  horizontal
+>
+  Access your team's data management interface to upload and organize documents.
+</Card>
+
+## Data Types & Privacy
+
+<AccordionGroup>
+  <Accordion icon="lock" title="Team Data">
+    <img src="/images/data-team.jpeg" alt="Team Data Management Interface" />
+    
+    **Team data is completely private** and only accessible to your team members. This data is perfect for:
+    
+    - Internal documentation
+    - Private company information  
+    - Team-specific knowledge bases
+    - Confidential materials
+    
+    <Note>Team data remains secure and is never exposed to public chat integrations.</Note>
+  </Accordion>
+  
+  <Accordion icon="globe" title="Project Data">
+    <img src="/images/data-project.jpeg" alt="Project Data Management Interface" />
+    
+    <Warning>
+      **Project data becomes public once uploaded to AI.** Anyone using your chat integration will be able to access this information through conversations.
+    </Warning>
+    
+    Project data is designed for:
+    
+    - Public documentation
+    - FAQ content
+    - Product information
+    - Customer support materials
+  </Accordion>
+</AccordionGroup>
+
+## Upload Process
+
+Follow these steps to upload and activate your data for AI use:
+
+### Step 1: Upload Files
+
+<AccordionGroup>
+  <Accordion icon="upload" title="Add Data">
+    1. Click the **"Add Data"** button in your data management interface
+    2. Select your files in the upload dialog
+    3. You can upload multiple files simultaneously
+    
+    <Tip>Each file must be under **15MB**. If you encounter errors, try uploading fewer files at once.</Tip>
+  </Accordion>
+  
+  <Accordion icon="file" title="Supported Formats">
+    We officially support the following file formats for optimal performance:
+    
+    - **`.txt`** - Plain text files
+    - **`.md`** - Markdown documents  
+    - **`.docx`** - Microsoft Word documents
+    
+    <Note>For the best AI experience, use these supported formats whenever possible.</Note>
+  </Accordion>
+</AccordionGroup>
+
+### Step 2: Activate for AI
+
+<AccordionGroup>
+  <Accordion icon="arrows-rotate" title="Refresh & Review">
+    After uploading:
+    
+    1. Click **"Refresh"** on the data table to display your uploaded files
+    2. Check the **"Uploaded to AI"** column - it should show an ❌
+    3. Review your files to ensure they're correct
+  </Accordion>
+  
+  <Accordion icon="robot" title="Upload to AI">
+    1. Click **"Upload to AI"** for your desired files
+    2. **Read the alert dialog carefully** - it explains the implications
+    3. Confirm you understand that project data will become public
+    
+    <Warning>
+      Once you upload project data to AI, it becomes accessible through your public chat widget. This action cannot be easily undone.
+    </Warning>
+  </Accordion>
+  
+  <Accordion icon="circle-check" title="Verify Activation">
+    1. Click **"Refresh"** on the table again
+    2. The **"Uploaded to AI"** column should now show a ✅
+    3. Your chat setup is now ready to use!
+  </Accordion>
+</AccordionGroup>
+
+## Context Verification
+
+<Warning>
+  Always double-check your **team and project context** before uploading to ensure you're not uploading files to the wrong location or making private data public by mistake.
+</Warning>
+
+## Best Practices for RAG Optimization
+
+RAG technology uses similarity matching to find relevant content. Follow these guidelines for optimal results:
+
+### ✅ Good Practice
+
+Write content the way users might ask about it:
+
+```markdown
+**File: lucky-number.md**
+Contoso's lucky number is 42. This number was chosen as the company's 
+official lucky number during the founding ceremony in 2020.
+```
+
+**User question:** "What is Contoso's lucky number?"  
+**Result:** High similarity score ✅ - AI finds and uses this context effectively.
+
+### ❌ Poor Practice
+
+Avoid bare facts without context:
+
+```markdown
+**File: lucky-number.md**
+42
+```
+
+**User question:** "What is Contoso's lucky number?"  
+**Result:** Low similarity score ❌ - AI may not retrieve this as relevant context.
+
+### Writing Tips
+
+<AccordionGroup>
+  <Accordion icon="lightbulb" title="Content Structure">
+    - Include context and background information
+    - Use natural language that matches user queries
+    - Add relevant keywords throughout your content
+    - Structure information in question-and-answer format when appropriate
+  </Accordion>
+  
+  <Accordion icon="magnifying-glass" title="Similarity Optimization">
+    - Write as if answering the questions users will ask
+    - Include multiple ways of phrasing the same information
+    - Add synonyms and related terms
+    - Use descriptive headings and subheadings
+  </Accordion>
+</AccordionGroup>
+
+## File Management
+
+<Columns cols={2}>
+  <Card
+    title="Team Data"
+    icon="lock"
+  >
+    - Private and secure
+    - Team members only
+    - Internal documentation
+    - Confidential information
+    - Never public-facing
+  </Card>
+  
+  <Card
+    title="Project Data"
+    icon="globe"
+  >
+    - Public after AI upload
+    - Customer-facing content
+    - FAQ and support docs
+    - Product information
+    - Accessible via chat widget
+  </Card>
+</Columns>

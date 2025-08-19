@@ -1,0 +1,118 @@
+---
+title: "Chat Features"
+description: "Intelligent AI chat powered by RAG technology"
+icon: "comments"
+---
+
+# Chat Features
+
+Access Ragou's powerful chat interface to test your AI implementations and collaborate with your team using advanced RAG technology.
+
+## Accessing Team Chat
+
+Navigate to the team chat interface using this direct link:
+
+<Card
+  title="Team Chat"
+  icon="comments"
+  href="https://app.ragou.net/home/teams/chat"
+  horizontal
+>
+  Access your team's internal chat interface with RAG capabilities.
+</Card>
+
+## Chat Modes
+
+Ragou offers two distinct chat modes, each designed for different use cases and audiences.
+
+### Team Chat Mode
+
+<img src="/images/chat.jpeg" alt="Ragou Team Chat Interface" />
+
+<AccordionGroup>
+  <Accordion icon="users" title="Internal Team Access">
+    Team chat mode provides access to your team's internal data and documentation. This mode is identified by the **team selector** in the top right of the interface.
+    
+    <Note>Team chat is internal-only and cannot be accessed publicly by your website visitors.</Note>
+  </Accordion>
+  
+  <Accordion icon="database" title="Team Data Access">
+    When using team chat, you can leverage the RAG system internally for:
+    
+    - **Project Information**: Access details about your team's projects
+    - **Internal Documentation**: Query your team's documentation and knowledge base
+    - **Application Support**: Use as a RAG system for internal application documentation
+    
+    The system displays which document chunk the AI used to generate each answer, providing full transparency and source attribution.
+  </Accordion>
+</AccordionGroup>
+
+### Project Chat Mode
+
+<img src="/images/chat-project.jpeg" alt="Ragou Project Chat Interface" />
+
+<AccordionGroup>
+  <Accordion icon="flask" title="Testing Playground">
+    Project chat serves as an **internal-facing playground** for your public projects. This mode allows you to:
+    
+    - Test your chat and data setup before going live
+    - Verify AI responses and behavior
+    - Debug and optimize your project configuration
+    
+    Like team chat, project chat returns source information showing which documents were used to generate responses.
+  </Accordion>
+  
+  <Accordion icon="eye-slash" title="Source Visibility">
+    <Warning>
+      Source information is only available in the internal chat interfaces (team and project chat). Public chat components do **not** display source attribution to end users.
+    </Warning>
+  </Accordion>
+  
+  <Accordion icon="chart-bar" title="Usage Allowance">
+    <Tip>
+      Project chat currently does not count against your chat usage allowance, making it ideal for extensive testing and development.
+    </Tip>
+    
+    <Note>
+      We reserve the right to change this policy if the endpoint is abused. Use responsibly for legitimate testing purposes.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Switching Between Projects
+
+You can easily switch between different projects while using the chat interface:
+
+1. Locate the **project selector** in the prompt input area
+2. Click the dropdown to view available projects
+3. Select the desired project to switch context
+
+<Info>
+  Switching projects changes the data context and available knowledge base for your chat session.
+</Info>
+
+## Key Differences
+
+<Columns cols={2}>
+  <Card
+    title="Team Chat"
+    icon="users"
+  >
+    - Internal team use only
+    - Access to team-wide data
+    - Perfect for internal documentation
+    - Shows document sources
+    - Team selector in top right
+  </Card>
+  
+  <Card
+    title="Project Chat"
+    icon="flask"
+  >
+    - Internal testing playground
+    - Project-specific data
+    - Test public chat setup
+    - Shows document sources
+    - Project selector in prompt input
+  </Card>
+</Columns>

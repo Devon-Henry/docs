@@ -1,80 +1,124 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Quick Start Guide"
+description: "Get Ragou's AI chat widget up and running on your website in minutes"
 ---
 
-## Get started in three steps
+## Get Ragou running in four simple steps
 
-Get your documentation site running locally and make your first customization.
+Follow this guide to integrate Ragou's intelligent AI chat into your website and start helping your customers instantly.
 
-### Step 1: Set up your local environment
+### Step 1: Create your Ragou account
 
 <AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
+  <Accordion icon="user-plus" title="Sign up for Ragou">
+    Create your free Ragou account to get started:
     
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
+    - **New user?** [Sign up here](https://app.ragou.net/auth/sign-up)
+    - **Already have an account?** [Login here](https://app.ragou.net/auth/login)
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+  <Accordion icon="users" title="Create your first team">
+    All projects must live within a team, so let's create one:
     
-    <Tip>Your preview updates automatically as you edit files.</Tip>
+    1. After logging in, create your first team
+    2. Choose a unique team slug (this cannot be changed later)
+    3. Complete the team setup process
+    
+    <Note>The team slug must be unique across all Ragou users.</Note>
   </Accordion>
 </AccordionGroup>
 
-### Step 2: Deploy your changes
+### Step 2: Set up your project
 
 <AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+  <Accordion icon="folder-plus" title="Create your first project">
+    1. Navigate to **Projects** in your dashboard
+    2. Make sure your newly created team is selected
+    3. Click **Create Project** and fill in your project details
+    4. Save your project settings
+  </Accordion>
+  <Accordion icon="key" title="Get your Project ID">
+    You'll need your Project ID for the chat widget integration:
     
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
+    1. Go to [Projects Dashboard](https://app.ragou.net/home/teams/projects)
+    2. Click on your desired project
+    3. Copy your **Project ID** from the project dashboard
+    
+    <Tip>Keep this Project ID handy - you'll need it in the next step!</Tip>
   </Accordion>
 </AccordionGroup>
 
-### Step 3: Go live
+### Step 3: Integrate the chat widget
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+<AccordionGroup>
+  <Accordion icon="code" title="Add the script tag">
+    Add this script tag to your HTML `<head>` or `<body>` section, above where you'll place the chat widget:
+    
+    ```html
+    <script src="https://chat-widget-cdn.devon-henry09.workers.dev/app.umd.js"></script>
+    ```
+  </Accordion>
+  <Accordion icon="comments" title="Add the chat widget">
+    Place the chat widget element where you want it to appear on your page:
+    
+    ```html
+    <chat-widget title="Ragou" projectId="your-project-id"></chat-widget>
+    ```
+    
+    Replace `your-project-id` with the Project ID you copied in Step 2.
+    
+    <Warning>Make sure to replace `your-project-id` with your actual Project ID!</Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Step 4: Upload your data
+
+<AccordionGroup>
+  <Accordion icon="upload" title="Upload your documents">
+    Your AI chatbot needs data to provide intelligent answers:
+    
+    1. Go to [Data Management](https://app.ragou.net/home/teams/data)
+    2. Select your project from the dropdown
+    3. Upload your documents (supported formats: `.md`, `.txt`, `.docx`)
+    4. Click **Upload to AI** to process your documents
+    
+    <Tip>Upload comprehensive documentation for better AI responses!</Tip>
+  </Accordion>
+  <Accordion icon="flask" title="Test your chatbot">
+    Verify everything is working correctly:
+    
+    1. Visit the [Chat Playground](https://app.ragou.net/home/teams/chat)
+    2. Select your project
+    3. Ask test questions to confirm your data is loaded
+    4. Head back to your website and try the chat widget!
+    
+    <Note>It may take a few minutes for uploaded documents to be processed and available.</Note>
+  </Accordion>
+</AccordionGroup>
 
 ## Next steps
 
-Now that you have your docs running, explore these key features:
+Now that your Ragou chat is live, explore these advanced features:
 
 <CardGroup cols={2}>
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
+<Card title="Chat Widget Customization" icon="palette" href="/features/chat-widget">
+  Customize the appearance and behavior of your chat widget.
 </Card>
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
+<Card title="Forms & Reporting" icon="chart-bar" href="/features/forms-reporting">
+  Learn about Basic and Pro tier features for enhanced functionality.
 </Card>
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
+<Card title="Analytics" icon="chart-line" href="/features/analytics">
+  Monitor customer interactions and optimize your content.
 </Card>
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
+<Card title="Team Management" icon="users" href="/features/team-management">
+  Add team members and manage permissions.
 </Card>
 
 </CardGroup>
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  **Need help?** Check out our comprehensive guides or [contact support](https://www.ragou.net/contact).
 </Note>

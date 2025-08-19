@@ -1,0 +1,263 @@
+---
+title: "Chat Widget Customisation"
+description: "Customize the appearance and behavior of your Ragou chat widget to match your brand"
+---
+
+## Overview
+
+The Ragou chat widget offers extensive customization options to seamlessly integrate with your website's design and branding. Configure colors, icons, animations, and more through simple HTML attributes.
+
+## Configuration Properties
+
+### Required Properties
+
+<AccordionGroup>
+  <Accordion icon="key" title="projectId">
+    **Type:** `string`  
+    **Required:** Yes
+    
+    Your unique Ragou project identifier. This connects the widget to your specific project and data.
+    
+    ```html
+    <chat-widget projectId="proj_abc123def456"></chat-widget>
+    ```
+    
+    <Note>Find your Project ID in your [Ragou dashboard](https://app.ragou.net/home/teams/projects).</Note>
+  </Accordion>
+</AccordionGroup>
+
+### Visual Customization
+
+<AccordionGroup>
+  <Accordion icon="palette" title="color">
+    **Type:** `string`  
+    **Default:** `#007bff`  
+    **Format:** Hex color, RGB, HSL, or named CSS colors
+    
+    Sets the primary color for the chat widget button and header background.
+    
+    ```html
+    <!-- Hex color -->
+    <chat-widget color="#8B5CF6" projectId="your-project-id"></chat-widget>
+    
+    <!-- RGB color -->
+    <chat-widget color="rgb(139, 92, 246)" projectId="your-project-id"></chat-widget>
+    
+    <!-- Named color -->
+    <chat-widget color="purple" projectId="your-project-id"></chat-widget>
+    ```
+  </Accordion>
+  
+  <Accordion icon="image" title="icon">
+    **Type:** `string`  
+    **Default:** Default chat bubble SVG  
+    **Format:** URL, Data URL, SVG markup, or emoji
+    
+    Customizes the icon displayed on the chat widget button.
+    
+    ```html
+    <!-- Image URL -->
+    <chat-widget icon="https://example.com/chat-icon.png" projectId="your-project-id"></chat-widget>
+    
+    <!-- Relative path -->
+    <chat-widget icon="/images/support-icon.svg" projectId="your-project-id"></chat-widget>
+    
+    <!-- Emoji -->
+    <chat-widget icon="💬" projectId="your-project-id"></chat-widget>
+    
+    <!-- SVG markup -->
+    <chat-widget icon='<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>' projectId="your-project-id"></chat-widget>
+    ```
+    
+    <Tip>For best results, use square images (1:1 aspect ratio) at 28x28 pixels or larger.</Tip>
+  </Accordion>
+  
+  <Accordion icon="text" title="title">
+    **Type:** `string`  
+    **Default:** `"Chat Support"`
+    
+    Sets the title displayed in the chat window header.
+    
+    ```html
+    <chat-widget title="Help & Support" projectId="your-project-id"></chat-widget>
+    
+    <chat-widget title="Ask Ragou" projectId="your-project-id"></chat-widget>
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Behavior Options
+
+<AccordionGroup>
+  <Accordion icon="radio" title="pulsing">
+    **Type:** `boolean`  
+    **Default:** `true`
+    
+    Controls whether the chat widget button has a pulsing animation to draw attention.
+    
+    ```html
+    <!-- Enable pulsing (default) -->
+    <chat-widget pulsing="true" projectId="your-project-id"></chat-widget>
+    
+    <!-- Disable pulsing -->
+    <chat-widget pulsing="false" projectId="your-project-id"></chat-widget>
+    ```
+    
+    <Note>The pulsing animation helps draw user attention to the chat widget.</Note>
+  </Accordion>
+  
+  <Accordion icon="window-maximize" title="isOpen">
+    **Type:** `boolean`  
+    **Default:** `false`
+    
+    Controls the initial state of the chat window (opened or closed).
+    
+    ```html
+    <!-- Start with chat window closed (default) -->
+    <chat-widget isOpen="false" projectId="your-project-id"></chat-widget>
+    
+    <!-- Start with chat window open -->
+    <chat-widget isOpen="true" projectId="your-project-id"></chat-widget>
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Usage Examples
+
+### Basic Implementation
+
+The simplest integration with just the required project ID:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://chat-widget-cdn.devon-henry09.workers.dev/app.umd.js"></script>
+</head>
+<body>
+    <!-- Your website content -->
+    
+    <chat-widget projectId="proj_abc123def456"></chat-widget>
+</body>
+</html>
+```
+
+### Branded Widget
+
+A fully customized widget matching your brand:
+
+```html
+<chat-widget 
+    title="Help Center"
+    color="#8B5CF6"
+    icon="/assets/support-icon.png"
+    pulsing="true"
+    projectId="proj_abc123def456">
+</chat-widget>
+```
+
+### Minimal Widget
+
+A subtle widget without animations:
+
+```html
+<chat-widget 
+    title="Support"
+    color="#6B7280"
+    icon="💬"
+    pulsing="false"
+    projectId="proj_abc123def456">
+</chat-widget>
+```
+
+## Complete Configuration Example
+
+Here's a comprehensive example showcasing all available customization options:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    
+    <!-- Ragou Chat Widget Script -->
+    <script src="https://chat-widget-cdn.devon-henry09.workers.dev/app.umd.js"></script>
+</head>
+<body>
+    <!-- Your website content here -->
+    <main>
+        <h1>Welcome to our website!</h1>
+        <p>Your content goes here...</p>
+    </main>
+    
+    <!-- Ragou Chat Widget with full customization -->
+    <chat-widget 
+        title="AI Assistant"
+        projectId="proj_your_actual_project_id"
+        color="#8B5CF6"
+        icon="https://your-domain.com/images/chat-icon.svg"
+        pulsing="true"
+        isOpen="false">
+    </chat-widget>
+</body>
+</html>
+```
+
+## Styling Notes
+
+<CardGroup cols={2}>
+  <Card title="Positioning" icon="arrows-maximize">
+    The widget is positioned fixed at `bottom: 20px; right: 20px` by default. It automatically adjusts for mobile devices.
+  </Card>
+  
+  <Card title="Z-Index" icon="layer-group">
+    The widget uses `z-index: 9999` to ensure it appears above other page content.
+  </Card>
+  
+  <Card title="Responsive Design" icon="mobile">
+    On screens smaller than 480px, the chat window expands to fit the available space with proper margins.
+  </Card>
+  
+  <Card title="Color Validation" icon="check-circle">
+    The widget validates color values and falls back to the default blue if an invalid color is provided.
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion icon="lightbulb" title="Color Selection">
+    - Use colors that contrast well with white text for readability
+    - Consider your brand's primary or accent colors
+    - Test colors in both light and dark environments
+    - Ensure sufficient contrast for accessibility (WCAG AA compliance)
+  </Accordion>
+  
+  <Accordion icon="image" title="Icon Guidelines">
+    - Use square images for best results
+    - Optimize file sizes for faster loading
+    - Ensure icons are legible at 28x28 pixels
+    - Consider using SVG format for crisp scaling
+  </Accordion>
+  
+  <Accordion icon="mobile" title="Mobile Considerations">
+    - Test the widget on various screen sizes
+    - Ensure the chat window doesn't obstruct important content
+    - Consider disabling pulsing on mobile to reduce battery usage
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<Warning>
+  If your widget isn't appearing, check:
+  - The script is loaded before the widget element
+  - There are no JavaScript console errors
+  - The widget element is properly closed: `</chat-widget>`
+</Warning>
+
+<Tip>
+  You can inspect the widget element in your browser's developer tools to verify that properties are being applied correctly.
+</Tip>
