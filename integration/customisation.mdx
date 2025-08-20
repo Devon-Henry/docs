@@ -19,7 +19,7 @@ The Ragou chat widget offers extensive customization options to seamlessly integ
     Your unique Ragou project identifier. This connects the widget to your specific project and data.
     
     ```html
-    <chat-widget projectId="proj_abc123def456"></chat-widget>
+    <chat-widget projectId="your-project-id"></chat-widget>
     ```
     
     <Note>Find your Project ID in your [Ragou dashboard](https://app.ragou.net/home/teams/projects).</Note>
@@ -132,12 +132,12 @@ The simplest integration with just the required project ID:
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://chat-widget-cdn.devon-henry09.workers.dev/app.umd.js"></script>
+    <script src="https://chat-widget-cdn.ragou.workers.dev/app.umd.js"></script>
 </head>
 <body>
     <!-- Your website content -->
     
-    <chat-widget projectId="proj_abc123def456"></chat-widget>
+    <chat-widget projectId="your-project-id"></chat-widget>
 </body>
 </html>
 ```
@@ -152,7 +152,7 @@ A fully customized widget matching your brand:
     color="#8B5CF6"
     icon="/assets/support-icon.png"
     pulsing="true"
-    projectId="proj_abc123def456">
+    projectId="your-project-id">
 </chat-widget>
 ```
 
@@ -166,7 +166,7 @@ A subtle widget without animations:
     color="#6B7280"
     icon="💬"
     pulsing="false"
-    projectId="proj_abc123def456">
+    projectId="your-project-id">
 </chat-widget>
 ```
 
@@ -183,7 +183,7 @@ Here's a comprehensive example showcasing all available customization options:
     <title>Your Website</title>
     
     <!-- Ragou Chat Widget Script -->
-    <script src="https://chat-widget-cdn.devon-henry09.workers.dev/app.umd.js"></script>
+    <script src="https://chat-widget-cdn.ragou.workers.dev/app.umd.js"></script>
 </head>
 <body>
     <!-- Your website content here -->
@@ -195,7 +195,7 @@ Here's a comprehensive example showcasing all available customization options:
     <!-- Ragou Chat Widget with full customization -->
     <chat-widget 
         title="AI Assistant"
-        projectId="proj_your_actual_project_id"
+        projectId="your-project-id"
         color="#8B5CF6"
         icon="https://your-domain.com/images/chat-icon.svg"
         pulsing="true"
