@@ -27,7 +27,8 @@
               {
                 "group": "Frameworks",
                 "pages": [
-                  "integration/frameworks/HTML"
+                  "integration/frameworks/HTML",
+                  "integration/frameworks/WordPress"
                 ]
               },
               "integration/customisation"

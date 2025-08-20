@@ -1,0 +1,182 @@
+---
+title: "WordPress"
+description: "Step-by-step guide to integrate Ragou chat widget into your WordPress website"
+---
+
+## Quick Setup
+
+Add Ragou's AI chat to your WordPress website using the built-in Custom HTML blocks.
+
+### Basic WordPress Integration
+
+Follow these steps to add the chat widget to individual pages:
+
+#### Step 1: Navigate to WordPress Admin
+
+
+First, navigate to your WordPress admin site and log in.
+
+#### Step 2: Visit Your Site
+
+Click your site title in the top left corner of the admin dashboard and select **"Visit Site"**.
+
+<img
+  className="block"
+  src="/images/wpadmin.png"
+  alt="WordPress Admin Dashboard"
+/>
+
+
+#### Step 3: Enter Edit Mode
+
+Click **"Edit Page"** at the top in the toolbar. You'll now be in the WordPress block editor.
+
+<img
+  className="block"
+  src="/images/edit-site.png"
+  alt="Visit Site from WordPress Admin"
+/>
+
+#### Step 4: Add Custom HTML Block
+
+<img
+  className="block dark:hidden"
+  src="/images/custom-html.png"
+  alt="Adding Custom HTML Block"
+/>
+
+1. Click the **plus (+)** button in the top left
+2. Search for **"Custom HTML"**
+3. Insert the Custom HTML block
+
+#### Step 5: Insert Widget Code
+
+<img
+  className="block dark:hidden"
+  src="/images/html-insert.png"
+  alt="Inserting HTML Code"
+/>
+
+Find the Custom HTML block in your page and insert the following code:
+
+```html
+<script src="https://chat-widget-cdn.ragou.workers.dev/app.umd.js"></script>
+<chat-widget projectId="your-project-id"></chat-widget>
+```
+
+<Warning>
+Replace `your-project-id` with your actual Project ID from the [Ragou dashboard](https://app.ragou.net/home/teams/projects).
+</Warning>
+
+<Note>
+**Important**: This process needs to be repeated for each page on your site where you want the chat widget to appear.
+</Note>
+
+## Advanced Integration (Site-Wide)
+
+For a site-wide installation that appears on all pages, use WordPress global widgets:
+
+### Method 1: Theme Customizer
+
+1. Navigate to **WordPress Admin** → **Appearance** → **Customize**
+2. Look for widget areas like **Footer**, **Header**, or **Sidebar**
+3. Add a **Custom HTML** widget to any globally present widget area
+4. Insert the Ragou widget code:
+
+```html
+<script src="https://chat-widget-cdn.ragou.workers.dev/app.umd.js"></script>
+<chat-widget projectId="your-project-id"></chat-widget>
+```
+
+### Method 2: Theme Editor (Advanced Users)
+
+<Warning>
+Only attempt this if you're comfortable editing theme files. Always backup your site first.
+</Warning>
+
+1. Go to **Appearance** → **Theme Editor**
+2. Edit your theme's `footer.php` or `header.php` file
+3. Add the widget code before the closing `</body>` tag
+
+## Customized Example
+
+Add branding and customization to match your WordPress theme:
+
+```html
+<script src="https://chat-widget-cdn.ragou.workers.dev/app.umd.js"></script>
+<chat-widget 
+    title="Customer Support"
+    projectId="your-project-id"
+    color="#8B5CF6"
+    icon="💬"
+    pulsing="true">
+</chat-widget>
+```
+
+## Integration Tips
+
+<AccordionGroup>
+  <Accordion icon="wordpress" title="Plugin Compatibility">
+    The Ragou widget works with most WordPress themes and plugins. If you experience conflicts:
+    
+    - Try placing the code in different locations (header vs footer)
+    - Check for JavaScript errors in browser console
+    - Test with other plugins temporarily disabled
+  </Accordion>
+  
+  <Accordion icon="mobile" title="Mobile Responsiveness">
+    The widget automatically adapts to mobile screens and works with responsive WordPress themes.
+  </Accordion>
+  
+  <Accordion icon="gear" title="Caching Plugins">
+    If using caching plugins (WP Rocket, W3 Total Cache, etc.):
+    
+    - Clear cache after adding the widget
+    - Some plugins may need JavaScript optimization disabled for the widget to work properly
+  </Accordion>
+  
+  <Accordion icon="shield" title="Security Plugins">
+    If using security plugins that block external scripts:
+    
+    - Whitelist `https://chat-widget-cdn.ragou.workers.dev/`
+    - Allow the domain in your security plugin settings
+  </Accordion>
+</AccordionGroup>
+
+## Coming Soon
+
+<Note>
+**WordPress Plugin**: A dedicated Ragou WordPress plugin is on our roadmap to make installation even easier. This will allow one-click installation across your entire site.
+</Note>
+
+## What Happens Next
+
+1. **Widget Appears**: A floating chat button appears in the bottom-right corner of your pages
+2. **Click to Open**: Visitors click the button to open the chat window  
+3. **AI Responds**: Your trained AI answers questions based on your uploaded documents
+4. **Fallback Support**: Forms are generated for questions the AI cannot answer
+
+## Need More Control?
+
+For advanced customization options and styling, see the [Customisation guide](/integration/customisation).
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion icon="bug" title="Widget Not Appearing">
+    **Common Solutions:**
+    
+    - Ensure the project ID is correct
+    - Check that JavaScript is enabled in your browser
+    - Clear browser and WordPress cache
+    - Try adding the code to a different page location
+  </Accordion>
+  
+  <Accordion icon="triangle-exclamation" title="Theme Conflicts">
+    **If the widget conflicts with your theme:**
+    
+    - Try adding the code to the footer instead of content area
+    - Contact your theme developer for Custom HTML block support
+    - Consider using a child theme for modifications
+  </Accordion>
+</AccordionGroup>
