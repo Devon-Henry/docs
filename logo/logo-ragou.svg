@@ -1,0 +1,27 @@
+<svg width="700" height="200" viewBox="0 0 700 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo (positioned on left side) -->
+  <g transform="translate(50, 10) scale(6)">
+    <path d="M17 2.2V5.15M6.9712 8.56336L4.84984 6.47732M27.0287 8.56336L29.15 6.47732M8 19.9C8 15.0123 12.0294 11.05 17 11.05C21.9706 11.05 26 15.0123 26 19.9M32 19.9H2M27.5 25.8H6.5" stroke="url(#primary-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Ragou Text -->
+  <text x="300" y="150" font-family="Inter, Arial, sans-serif" font-size="110" font-weight="700" fill="url(#text-gradient)" letter-spacing="-0.02em">
+    Ragou
+  </text>
+  
+  <defs>
+    <!-- Logo gradient -->
+    <linearGradient id="primary-gradient" x1="32" y1="2.2" x2="2" y2="25.8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.5" stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#4338CA"/>
+    </linearGradient>
+    
+    <!-- Text gradient -->
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.6" stop-color="#4338CA"/>
+      <stop offset="1" stop-color="#3730A3"/>
+    </linearGradient>
+  </defs>
+</svg>
