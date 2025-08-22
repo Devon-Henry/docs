@@ -47,6 +47,94 @@ The Ragou chat widget offers extensive customization options to seamlessly integ
     <chat-widget color="purple" projectId="your-project-id"></chat-widget>
     ```
   </Accordion>
+
+  <Accordion icon="brush" title="theme">
+    **Type:** `string`  
+    **Default:** `system`  
+    **Options:** `light`, `dark`, `system`
+    
+    Controls the overall theme of the chat interface. System theme automatically adapts to user's device preference.
+    
+    ```html
+    <!-- Light theme -->
+    <chat-widget theme="light" projectId="your-project-id"></chat-widget>
+    
+    <!-- Dark theme -->
+    <chat-widget theme="dark" projectId="your-project-id"></chat-widget>
+    
+    <!-- System theme (follows device preference) -->
+    <chat-widget theme="system" projectId="your-project-id"></chat-widget>
+    ```
+  </Accordion>
+
+  <Accordion icon="paintbrush" title="primaryColor">
+    **Type:** `string`  
+    **Default:** `#007bff`  
+    **Format:** 6-character hex color code (without #)
+    
+    Sets the primary color for chat elements like user message bubbles and submit buttons inside the chat interface.
+    
+    ```html
+    <!-- Purple primary color -->
+    <chat-widget primaryColor="8B5CF6" projectId="your-project-id"></chat-widget>
+    
+    <!-- Green primary color -->
+    <chat-widget primaryColor="10B981" projectId="your-project-id"></chat-widget>
+    
+    <!-- Custom brand color -->
+    <chat-widget primaryColor="FF6B6B" projectId="your-project-id"></chat-widget>
+    ```
+    
+    <Note>Use 6-character hex codes without the # symbol (e.g., "8B5CF6" not "#8B5CF6")</Note>
+  </Accordion>
+
+  <Accordion icon="font" title="textColor">
+    **Type:** `string`  
+    **Default:** `ffffff` (white)  
+    **Format:** 6-character hex color code (without #)
+    
+    Sets the text color for user messages when using a custom primary color.
+    
+    ```html
+    <!-- White text on colored background -->
+    <chat-widget 
+        primaryColor="8B5CF6" 
+        textColor="ffffff" 
+        projectId="your-project-id">
+    </chat-widget>
+    
+    <!-- Black text for light backgrounds -->
+    <chat-widget 
+        primaryColor="F3F4F6" 
+        textColor="000000" 
+        projectId="your-project-id">
+    </chat-widget>
+    ```
+  </Accordion>
+
+  <Accordion icon="heading" title="titleColor">
+    **Type:** `string`  
+    **Default:** `ffffff` (white)  
+    **Format:** 6-character hex color code (without #)
+    
+    Sets the color of the title text and close button in the chat window header.
+    
+    ```html
+    <!-- Custom title color -->
+    <chat-widget 
+        titleColor="FFD700" 
+        title="Support Chat"
+        projectId="your-project-id">
+    </chat-widget>
+    
+    <!-- Dark title for light headers -->
+    <chat-widget 
+        color="#F8F9FA"
+        titleColor="374151" 
+        projectId="your-project-id">
+    </chat-widget>
+    ```
+  </Accordion>
   
   <Accordion icon="image" title="icon">
     **Type:** `string`  
@@ -144,14 +232,36 @@ The simplest integration with just the required project ID:
 
 ### Branded Widget
 
-A fully customized widget matching your brand:
+A fully customized widget matching your brand with advanced theming:
 
 ```html
 <chat-widget 
     title="Help Center"
     color="#8B5CF6"
+    primaryColor="8B5CF6"
+    textColor="ffffff"
+    titleColor="ffffff"
+    theme="light"
     icon="/assets/support-icon.png"
     pulsing="true"
+    projectId="your-project-id">
+</chat-widget>
+```
+
+### Dark Theme Widget
+
+A widget configured for dark theme with custom colors:
+
+```html
+<chat-widget 
+    title="AI Assistant"
+    color="#1F2937"
+    primaryColor="3B82F6"
+    textColor="ffffff"
+    titleColor="F3F4F6"
+    theme="dark"
+    icon="🤖"
+    pulsing="false"
     projectId="your-project-id">
 </chat-widget>
 ```
@@ -169,6 +279,35 @@ A subtle widget without animations:
     projectId="your-project-id">
 </chat-widget>
 ```
+
+## Advanced Theming
+
+The chat widget automatically passes theme and color customizations to the internal chat interface through URL parameters. This ensures a consistent experience between the widget button and the chat window.
+
+### Parameter Passing
+
+When you set properties on the widget, they are automatically passed to the chat interface:
+
+```html
+<chat-widget 
+    theme="dark"
+    primaryColor="8B5CF6"
+    textColor="ffffff"
+    projectId="your-project-id">
+</chat-widget>
+```
+
+This generates a chat URL with parameters like:
+```
+https://chat.ragou.net/?projectId=your-project-id&theme=dark&primaryColor=8B5CF6&textColor=ffffff
+```
+
+### Theme Inheritance
+
+- **System Theme**: Automatically detects user's device preference
+- **Light Theme**: Forces light mode regardless of device setting  
+- **Dark Theme**: Forces dark mode regardless of device setting
+- **Color Consistency**: Primary and text colors are applied to user messages and interactive elements
 
 ## Complete Configuration Example
 
@@ -197,6 +336,10 @@ Here's a comprehensive example showcasing all available customization options:
         title="AI Assistant"
         projectId="your-project-id"
         color="#8B5CF6"
+        primaryColor="8B5CF6"
+        textColor="ffffff"
+        titleColor="ffffff"
+        theme="system"
         icon="https://your-domain.com/images/chat-icon.svg"
         pulsing="true"
         isOpen="false">
@@ -220,7 +363,7 @@ Here's a comprehensive example showcasing all available customization options:
     On screens smaller than 480px, the chat window expands to fit the available space with proper margins.
   </Card>
   
-  <Card title="Color Validation" icon="check-circle">
+  <Card title="Color Validation" icon="circle-check">
     The widget validates color values and falls back to the default blue if an invalid color is provided.
   </Card>
 </CardGroup>
@@ -233,6 +376,33 @@ Here's a comprehensive example showcasing all available customization options:
     - Consider your brand's primary or accent colors
     - Test colors in both light and dark environments
     - Ensure sufficient contrast for accessibility (WCAG AA compliance)
+  </Accordion>
+
+  <Accordion icon="palette" title="Color Coordination">
+    When using multiple color properties, ensure they work well together:
+    
+    - **Widget Button (`color`)**: Should be prominent and match your brand
+    - **Primary Color (`primaryColor`)**: Used for user messages and interactive elements
+    - **Text Color (`textColor`)**: Must contrast well with the primary color
+    - **Title Color (`titleColor`)**: Should be readable against the widget button color
+    
+    ```html
+    <!-- Good color coordination -->
+    <chat-widget 
+        color="#1E40AF"      <!-- Blue widget button -->
+        primaryColor="3B82F6" <!-- Lighter blue for messages -->
+        textColor="ffffff"    <!-- White text on blue -->
+        titleColor="ffffff"   <!-- White title on blue header -->
+        projectId="your-project-id">
+    </chat-widget>
+    ```
+  </Accordion>
+
+  <Accordion icon="moon" title="Theme Considerations">
+    - Use `theme="system"` to automatically adapt to user preferences
+    - Consider providing both light and dark color schemes
+    - Test your widget in all theme modes before deployment
+    - Dark themes work well with lighter accent colors
   </Accordion>
   
   <Accordion icon="image" title="Icon Guidelines">
